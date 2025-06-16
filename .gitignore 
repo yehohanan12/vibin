@@ -1,0 +1,39 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+
+# Vite cache
+.vite/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS metadata
+*.DS_Store
+
+# Optional: ignore coverage reports
+coverage/
+
+# Optional: ignore local settings
+*.log
+*.tgz
+*.lock
