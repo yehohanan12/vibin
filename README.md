@@ -45,6 +45,18 @@ VIBIN/
 
    cd ../Frontend
    npm install
+   
+   
+   
+   
+   npm install express sequelize mysql2 bcrypt
+
+   npm install bcrypt
+   
+   node sync.js  
+   
+   node seed.js 
+
    ```
 
 3. **Configurer les variables d’environnement (backend)**
