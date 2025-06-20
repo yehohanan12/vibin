@@ -53,6 +53,9 @@ VIBIN/
    // back
    npm install express sequelize mysql2 bcrypt
 
+   npm install jsonwebtoken bcryptjs
+   
+   
    npm install bcrypt
  
    npm install corse

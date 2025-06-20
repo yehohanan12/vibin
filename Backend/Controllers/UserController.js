@@ -1,4 +1,7 @@
 const userService = require('../Services/UserService');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+const JWT_SECRET = process.env.JWT_SECRET || 'secret123';
 
 class UserController {
 
@@ -45,6 +48,38 @@ class UserController {
         if (!deleted) return res.status(404).json({ error: 'User not found' });
         res.json({ message: 'User deleted' });
     }
+
+
+    async login(req, res) {
+        const { email, password } = req.body;
+        const user = await userService.getUserByEmail(email);
+        if (!user) return res.status(401).json({ error: 'Utilisateur introuvable' });
+
+        const isValid = await bcrypt.compare(password, user.password);
+        if (!isValid) return res.status(401).json({ error: 'Mot de passe incorrect' });
+
+        const token = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: '24h' });
+
+        const cleanUser = user.toJSON();
+        delete cleanUser.password;
+
+        res.json({ token, user: cleanUser });
+    }
+
+    async getProfile(req, res) {
+        try {
+            const userId = req.user.id;
+            const user = await userService.getUserById(userId);
+            if (!user) return res.status(404).json({ error: 'Utilisateur introuvable' });
+            const cleanUser = user.toJSON();
+            delete cleanUser.password;
+            res.json(cleanUser);
+        } catch (err) {
+            res.status(500).json({ error: 'Erreur serveur' });
+        }
+    }
+
+
 }
 
 module.exports = new UserController();
