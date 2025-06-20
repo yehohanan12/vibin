@@ -1,23 +1,32 @@
 // index.js
 const express = require('express');
 const app = express();
-const PORT = 3000;
+const sequelize = require('./config/db');
+const userRoutes = require('./routes/userRoutes');
+const cors = require('cors');
 
-// Middleware pour lire le JSON
 app.use(express.json());
 
-// Exemple de route GET
+// 👉 Route racine
 app.get('/', (req, res) => {
-    res.send('Bienvenue sur ton backend Express 🚀');
+    res.send('Bienvenue sur l’API de votre boutique');
 });
 
-// Exemple de route POST
-app.post('/api/message', (req, res) => {
-    const { message } = req.body;
-    res.json({ received: message });
-});
+// 👉 Routes utilisateurs
+app.use(cors({
+    origin: 'http://localhost:5173', // j'autorise le frontend
+    credentials: true // si tu veux utiliser les cookies ou headers d’auth plus tard
+}));
+app.use('/users', userRoutes);
 
-// Démarrage du serveur
-app.listen(PORT, () => {
-    console.log(`Serveur lancé sur http://localhost:${PORT}`);
+
+
+
+
+const PORT = 3000;
+
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => {
+        console.log(`Serveur lancé sur http://localhost:${PORT}`);
+    });
 });

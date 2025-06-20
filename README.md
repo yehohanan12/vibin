@@ -45,6 +45,25 @@ VIBIN/
 
    cd ../Frontend
    npm install
+   
+   // front
+   npm install react-router-dom
+
+   
+   // back
+   npm install express sequelize mysql2 bcrypt
+
+   npm install jsonwebtoken bcryptjs
+   
+   
+   npm install bcrypt
+ 
+   npm install corse
+     
+   node sync.js  
+   
+   node seed.js 
+
    ```
 
 3. **Configurer les variables d’environnement (backend)**
