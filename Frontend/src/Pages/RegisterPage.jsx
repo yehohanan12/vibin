@@ -52,7 +52,7 @@ export default function AuthPage() {
                                 name="username"
                                 value={form.username}
                                 onChange={handleChange}
-                                required={!isLogin ? true : false}
+                                required={!isLogin}
                             />
                         </div>
 
@@ -64,7 +64,7 @@ export default function AuthPage() {
                                 name="address"
                                 value={form.address}
                                 onChange={handleChange}
-                                required={!isLogin ? true : false}
+                                required={!isLogin}
                             />
                         </div>
                     </>
