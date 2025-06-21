@@ -49,7 +49,10 @@ VIBIN/
    front
    npm install react-router-dom
 
-   
+   npm install -D @tailwindcss/postcss
+
+
+
     back
    npm install express sequelize mysql2 bcrypt
 
