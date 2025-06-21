@@ -58,7 +58,7 @@ class UserController {
         const isValid = await bcrypt.compare(password, user.password);
         if (!isValid) return res.status(401).json({ error: 'Mot de passe incorrect' });
 
-        const token = jwt.sign({ id: user.id }, JWT_SECRET, { expiresIn: '24h' });
+        const token = jwt.sign({ id: user.id, role: user.role }, JWT_SECRET, { expiresIn: '24h' });
 
         const cleanUser = user.toJSON();
         delete cleanUser.password;

@@ -1,11 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
-import RegisterPage from "../Pages/RegisterPage.jsx";
+import HomePage from "../Pages/HomePage.jsx";
 
 
 export default function AppRoutes() {
     return (
         <Routes>
-            <Route path="/" element={<RegisterPage/>} />
+            <Route path="/" element={<HomePage/>} />
         </Routes>
     );
 }

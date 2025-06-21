@@ -17,7 +17,7 @@ yarn-error.log*
 Thumbs.db
 
 # Environment variables
-.env
+Backend/.env
 .env.local
 .env.*.local
 

@@ -46,19 +46,24 @@ VIBIN/
    cd ../Frontend
    npm install
    
-   // front
+   front
    npm install react-router-dom
 
-   
-   // back
+   npm install -D @tailwindcss/postcss
+
+
+
+    back
    npm install express sequelize mysql2 bcrypt
 
    npm install jsonwebtoken bcryptjs
    
-   
    npm install bcrypt
+   
+   npm install dotenv
+
  
-   npm install corse
+   npm install cors
      
    node sync.js  
    
