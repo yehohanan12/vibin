@@ -1,77 +1,57 @@
 import React from "react";
+import logo from "../assets/Logo.svg";
+import icon1 from "../assets/Group 4.svg";
+import icon2 from "../assets/Vector 18.svg";
+import icon3 from "../assets/Group 2.svg";
+import icon4 from "../assets/Group 12.svg";
 
-function Header() {
+export default function Header() {
     return (
         <header
-            className="fixed top-0 left-0 w-full z-50 flex-shrink-0"
-            style={{
-                background:
-                    "url(<path-to-image>) #F1E8E8 50% / cover no-repeat",
-                height: "80px" // ajuste selon ta hauteur de header
-            }}
+            className="relative w-full flex-shrink-0 bg-[#fd6f2f]"
+            style={{ height: 90 }}
         >
-            <div className="max-w-[1440px] mx-auto flex items-center justify-between px-4 md:px-8 h-full">
-                {/* Logo */}
-                <div className="flex items-center">
-          <span
-              className="font-bold text-white text-3xl tracking-tight select-none mr-2"
-              style={{
-                  fontFamily: "Pacifico, cursive",
-                  color: "#FFFFFF",
-                  textShadow: "1px 1px 4px #73181799"
-              }}
-          >
-            Vib<span className="font-normal">in</span>
-          </span>
-                    <span
-                        className="text-xs ml-1"
-                        style={{ color: "#731817", opacity: 0.7 }}
-                    >
-            à votre rythme
-          </span>
-                </div>
-                {/* Navigation */}
-                <nav
-                    aria-label="Menu principal"
-                    className="flex-1 flex justify-center"
-                >
-                    <ul className="flex gap-4 md:gap-8">
-                        {["ACCUEIL", "SEXTOYS", "BLOG", "À PROPOS", "CONTACT"].map(
-                            (item) => (
-                                <li key={item}>
-                                    <a
-                                        href="#"
-                                        className="font-semibold transition"
-                                        style={{
-                                            color: "#FFFFFF",
-                                            textShadow: "1px 1px 3px #73181799"
-                                        }}
-                                    >
-                                        {item}
-                                    </a>
-                                </li>
-                            )
-                        )}
-                    </ul>
-                </nav>
-                {/* Icons */}
-                <div className="flex items-center gap-4 md:gap-6 text-lg">
-                    {[
-                        { label: "Recherche", icon: <circle cx="9" cy="9" r="7" /> },
-                        { label: "Favoris", icon: <path d="M10 17l-5.5-5.5a4 4 0 015.5-5.5 4 4 0 015.5 5.5L10 17z" /> },
-                        { label: "Panier", icon: <path d="M1 1h2l2.68 13.39a2 2 0 001.99 1.61h8.66a2 2 0 001.99-1.61L21 6H6" /> },
-                        { label: "Compte", icon: <path d="M2 19c0-4 8-4 8-4s8 0 8 4" /> },
-                    ].map(({ label, icon }) => (
-                        <button key={label} aria-label={label} style={{ color: "#FFFFFF" }}>
-                            <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2">
-                                {icon}
-                            </svg>
-                        </button>
-                    ))}
-                </div>
+            {/* fond rectangle orange */}
+            <div className="absolute inset-0 bg-[#fd6f2f]" />
+
+            {/* Logo */}
+            <img
+                src={logo}
+                alt="Vibin logo"
+                className="absolute left-12 top-[7px] h-[76px] w-auto z-10"
+            />
+
+            {/* Navigation centrée */}
+            <div
+                className="absolute left-1/2 flex flex-row gap-[40px] items-center justify-start text-white"
+                style={{
+                    width: 508,
+                    top: "34.44%",
+                    transform: "translateX(-50%)",
+                }}
+            >
+                {["Accueil", "Sextoys", "Blog", "à propos", "Contact"].map(
+                    (item) => (
+                        <a
+                            href="#"
+                            key={item}
+                            className="font-[BebasNeue-Regular] text-sm font-normal tracking-wider relative"
+                        >
+                            {item}
+                        </a>
+                    )
+                )}
+            </div>
+
+            {/* Icônes */}
+            <div
+                className="absolute flex flex-row gap-[48.2px] items-end"
+                style={{ left: 1122, top: 31 }}
+            >
+                {[icon1, icon2, icon3, icon4].map((src, i) => (
+                    <img key={i} src={src} alt="" className="h-[20px] w-auto" />
+                ))}
             </div>
         </header>
     );
 }
-
-export default Header;

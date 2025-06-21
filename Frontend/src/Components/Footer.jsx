@@ -1,158 +1,56 @@
 import React from "react";
+import logo from "../assets/Logo.svg";
+import iconFacebook from "../assets/Facebook.svg";
+import iconTwitter from "../assets/Twitter.svg";
+import iconLinkedIn from "../assets/Linkedin.svg";
+import Subscribe from "./Subscribe";
 
-function Footer() {
+export default function Footer() {
     return (
-        <footer className="w-full bg-gradient-to-r from-primary to-warm pt-8 pb-3 mt-12">
-            <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between px-4 md:px-8">
-                {/* Menu & SAV */}
-                <div className="flex flex-col md:flex-row gap-10 md:gap-16">
+        <footer className="bg-[#fd6f2f] text-white py-14 px-10 md:px-20">
+            <div className="max-w-7xl mx-auto flex flex-row justify-between gap-10">
+                {/* Bloc gauche */}
+                <div className="w-1/3 flex flex-col justify-between h-full min-h-[300px]">
                     <div>
-                        <h4 className="text-white font-bold mb-2 tracking-wide text-sm">
-                            MENU
-                        </h4>
-                        <ul className="text-white/80 text-base space-y-1">
-                            <li>
-                                <a href="#" className="hover:text-white">
-                                    Accueil
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="hover:text-white">
-                                    Sextoy
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="hover:text-white">
-                                    Blog
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="hover:text-white">
-                                    Contact
-                                </a>
-                            </li>
-                        </ul>
+                        <div className="font-bold text-lg mb-4">Menu</div>
+                        <div className="hover:underline cursor-pointer mb-2">Accueil</div>
+                        <div className="hover:underline cursor-pointer mb-2">Sextoy</div>
+                        <div className="hover:underline cursor-pointer mb-2">Blog</div>
+                        <div className="hover:underline cursor-pointer">Contact</div>
                     </div>
                     <div>
-                        <h4 className="text-white font-bold mb-2 tracking-wide text-sm">
-                            S.A.V
-                        </h4>
-                        <ul className="text-white/80 text-base space-y-1">
-                            <li>
-                                <a href="#" className="hover:text-white">
-                                    CGV
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" className="hover:text-white">
-                                    Retour
-                                </a>
-                            </li>
-                        </ul>
+                        <img src={logo} alt="Logo Vibin" className="h-20 w-auto mt-6" />
                     </div>
                 </div>
-                {/* Newsletter */}
-                <div className="mt-8 md:mt-0 flex flex-col min-w-[320px]">
-                    <h4 className="text-white font-bold mb-2 tracking-wide text-sm">
-                        NEWSLETTER
-                    </h4>
-                    <form className="flex mb-2">
-                        <input
-                            type="email"
-                            placeholder="Adresse mail"
-                            className="rounded-l px-4 py-2 w-full text-primary focus:outline-none"
-                        />
-                        <button
-                            type="submit"
-                            className="bg-primary text-white px-4 py-2 rounded-r font-bold hover:bg-white hover:text-primary transition-colors"
-                            aria-label="S'abonner"
-                        >
-                            <svg
-                                width="18"
-                                height="18"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                className="inline-block"
-                            >
-                                <path d="M4 9h10M11 6l3 3-3 3" />
-                            </svg>
-                        </button>
-                    </form>
-                    <p className="text-white/80 text-xs">
-                        Les conseils, des actus et des vibrations en avant-première.
-                        <br />
-                        Rejoins la communauté qui célèbre le plaisir sans tabou.
-                    </p>
-                    <div className="flex gap-4 mt-3">
-                        <a
-                            href="#"
-                            aria-label="LinkedIn"
-                            className="text-white/80 hover:text-white"
-                        >
-                            {/* LinkedIn */}
-                            <svg
-                                width="22"
-                                height="22"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <rect x="4" y="4" width="14" height="14" rx="2" />
-                                <path d="M8 11v4M8 8v.01M12 11v4m0-4a2 2 0 0 1 4 0v4" />
-                            </svg>
+
+                {/* Bloc centre */}
+                <div className="w-1/3 flex flex-col space-y-2">
+                    <div className="font-bold text-lg mb-4">S.A.V</div>
+                    <div className="hover:underline cursor-pointer mb-2">CGV</div>
+                    <div className="hover:underline cursor-pointer">Retour</div>
+                </div>
+
+                {/* Bloc droite : Newsletter */}
+                <div className="w-1/3 flex flex-col justify-between h-full min-h-[300px]">
+                    <Subscribe />
+
+                    <div className="flex space-x-6 mt-6 justify-center">
+                        <a href="#" aria-label="Twitter" className="hover:opacity-75 transition-opacity duration-200">
+                            <img className="h-6 w-auto" src={iconTwitter} alt="Twitter" />
                         </a>
-                        <a
-                            href="#"
-                            aria-label="Facebook"
-                            className="text-white/80 hover:text-white"
-                        >
-                            {/* Facebook */}
-                            <svg
-                                width="22"
-                                height="22"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <rect x="4" y="4" width="14" height="14" rx="2" />
-                                <path d="M14 8h-2a2 2 0 0 0-2 2v4" />
-                            </svg>
+                        <a href="#" aria-label="Facebook" className="hover:opacity-75 transition-opacity duration-200">
+                            <img className="h-6 w-auto" src={iconFacebook} alt="Facebook" />
                         </a>
-                        <a
-                            href="#"
-                            aria-label="Twitter"
-                            className="text-white/80 hover:text-white"
-                        >
-                            {/* Twitter */}
-                            <svg
-                                width="22"
-                                height="22"
-                                fill="none"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                            >
-                                <rect x="4" y="4" width="14" height="14" rx="2" />
-                                <path d="M8 12c3 2 6 0 6-2" />
-                            </svg>
+                        <a href="#" aria-label="LinkedIn" className="hover:opacity-75 transition-opacity duration-200">
+                            <img className="h-6 w-auto" src={iconLinkedIn} alt="LinkedIn" />
                         </a>
                     </div>
                 </div>
             </div>
-            {/* Logo bottom left */}
-            <div className="max-w-7xl mx-auto mt-8 flex items-end px-4 md:px-8">
-        <span
-            className="font-bold text-white text-3xl tracking-tight select-none mr-2"
-            style={{ fontFamily: "Pacifico, cursive" }}
-        >
-          Vib<span className="font-normal">in</span>
-        </span>
-                <span className="text-xs text-white opacity-70 ml-1 mb-1">
-          à votre rythme
-        </span>
+
+            <div className="mt-10 text-center text-xs text-white opacity-70">
+                © {new Date().getFullYear()} Vibin. Tous droits réservés.
             </div>
         </footer>
     );
 }
-
-export default Footer;

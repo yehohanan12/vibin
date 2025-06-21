@@ -2,36 +2,41 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 
-const HEADER_HEIGHT = 72; // Hauteur du header (ajuste si besoin)
+const HEADER_HEIGHT = 90;
 
 export default function Layout({ children }) {
     return (
-        <div className="min-h-screen flex flex-col bg-light">
-            {/* Header fixé en haut */}
+        <div className="min-h-screen flex flex-col" style={{ backgroundColor: "#fd6f2f" }}>
+            {/* Header full width */}
             <header
-                className="fixed top-0 left-0 w-full z-50 flex justify-center bg-[#F1E8E8] shadow-md"
+                className="fixed top-0 left-0 right-0 z-50 shadow-md flex items-center border-b border-black"
                 style={{
                     height: HEADER_HEIGHT,
-                    background: "url(<path-to-image>) #F1E8E8 50% / cover no-repeat"
+                    backgroundColor: "#fd6f2f",
+                    width: "100%",
                 }}
             >
-                <div className="w-full max-w-[1440px] px-4 sm:px-8 h-full flex items-center">
-                    {/* Header doit s'afficher inline ici, PAS à l'intérieur d'un autre wrapper */}
-                    <Header />
-                </div>
+                {/* Ne pas limiter la largeur ici */}
+                <Header />
             </header>
 
-            {/* Décalage du contenu principal */}
+            {/* Main content with header offset */}
             <main
-                className="flex-1 w-full max-w-[1440px] mx-auto px-4 sm:px-8 py-8"
-                style={{ paddingTop: HEADER_HEIGHT + 24 }}
+                className="flex-1 w-full mx-auto px-4 sm:px-8"
+                style={{
+                    paddingTop: HEADER_HEIGHT,
+                    backgroundColor: "#fd6f2f",
+                }}
             >
                 {children}
             </main>
 
-            {/* Footer aligné en bas */}
-            <footer className="w-full flex justify-center bg-[#F1E8E8]">
-                <div className="w-full max-w-[1440px] px-4 sm:px-8">
+            {/* Footer full width */}
+            <footer
+                className="w-full mt-auto border-t border-black"
+                style={{ backgroundColor: "#fd6f2f" }}
+            >
+                <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-8">
                     <Footer />
                 </div>
             </footer>

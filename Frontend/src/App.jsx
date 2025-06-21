@@ -5,6 +5,7 @@ import Layout from "./Components/Layout.jsx";
 function App() {
     return (
         <BrowserRouter>
+
             <Layout>
                 <AppRoutes />
             </Layout>
