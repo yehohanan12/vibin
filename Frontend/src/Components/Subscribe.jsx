@@ -1,34 +1,36 @@
 import React from "react";
 
 export default function Subscribe() {
-    return (
-        <div className="subscribe relative flex flex-col items-center justify-center h-[295px] text-center px-6">
-            <div className="rectangle-2 absolute inset-0 bg-[rgba(32,60,134,0.05)] rounded-lg"></div>
+  return (
+    <div className="relative flex flex-col items-center justify-center text-center px-6 py-6 bg-[rgba(32,60,134,0.05)] rounded-lg">
+      {/* Titre */}
+      <div className="font-bebas text-[20px] text-[#ffebdd] mb-4 uppercase tracking-wider">
+        Newsletter
+      </div>
 
-            <div className="learn-more relative z-10 font-bebas text-[18.26px] text-[#ffebdd] mb-6">
-                Newsletter
-            </div>
+      {/* Champ email + bouton */}
+      <div className="relative w-full max-w-[280px] flex overflow-hidden rounded-[6.85px] border border-[#e7e8f2] bg-white">
+        <input
+          type="email"
+          className="w-full h-[57px] px-4 py-3 text-black text-sm placeholder-transparent focus:outline-none"
+          placeholder="Adresse mail"
+        />
+        <button className="px-4 bg-orange-800 text-white text-lg font-bold hover:bg-orange-700 transition">
+          ➜
+        </button>
+        <label
+          className="absolute top-[50%] left-4 transform -translate-y-1/2 text-[#ffebdd] text-[14px] opacity-60 pointer-events-none font-helvetica"
+        >
+          Adresse mail
+        </label>
+      </div>
 
-            <div className="group-1051 relative z-10 w-[283.1px] h-[57.08px]">
-                <input
-                    type="email"
-                    placeholder=""
-                    className="fill bg-white border border-[#e7e8f2] rounded-[6.85px] w-full h-full px-4 py-3 text-black box-border"
-                />
-                {/*
-          Je ne peux pas deviner ce que sont fill2, arrows-down-top-move-1 SVGs,
-          donc je ne les inclus pas. Tu peux les remettre en <img /> ici si tu veux.
-        */}
-                <div className="label absolute top-[35%] left-[17%] w-[24.85%] text-[#ffebdd] opacity-60 text-left text-[16px] font-helvetica select-none pointer-events-none">
-                    Adresse mail
-                </div>
-            </div>
-
-            <div className="hello-we-are-flair relative z-10 mt-6 text-[#ffebdd] text-[13.7px] opacity-60 leading-[23.3px] font-helvetica max-w-[90%]">
-                Les conseils, des actus et des vibrations en avant-première.
-                <br />
-                Rejoins la communauté qui célèbre le plaisir sans tabou.
-            </div>
-        </div>
-    );
+      {/* Description */}
+      <p className="mt-6 text-[17.7px] text-[#ffebdd] opacity-60 leading-[23.3px] font-helvetica max-w-xs">
+        Les conseils, des actus et des vibrations en avant-première.
+        <br />
+        Rejoins la communauté qui célèbre le plaisir sans tabou.
+      </p>
+    </div>
+  );
 }
