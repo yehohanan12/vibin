@@ -10,12 +10,9 @@ const PRODUCTS = [
 
 export default function HomePage() {
   return (
-    <div
-      className="flex flex-col min-h-screen bg-cover bg-center"
-      style={{ backgroundImage: "url('/fond.jpg')" }}
-    >
-      {/* === SECTION HERO avec vidéo de fond === */}
-      <section className="relative h-[600px] w-full overflow-hidden text-white">
+    <div className="flex flex-col w-full">
+      {/* === SECTION HERO === */}
+      <section className="relative h-[600px] w-full overflow-hidden">
         <video
           src="/videos/vibin.mp4"
           autoPlay
@@ -25,12 +22,11 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-black bg-opacity-50" />
 
-        {/* Texte flottant au centre */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
-          <h1 className="text-[100px] md:text-[120px] font-bebas uppercase leading-tight text-white">
+          <h1 className="text-[90px] md:text-[120px] font-bebas uppercase leading-tight !text-white">
             DÉCOUVREZ VIB’IN
           </h1>
-          <p className="text-3xl md:text-4xl font-helvetica italic text-white mt-4 leading-snug">
+          <p className="text-2xl md:text-3xl font-helvetica italic mt-4 leading-snug !text-white">
             L'harmonie parfaite <br /> entre musique et plaisir
           </p>
         </div>
@@ -38,7 +34,7 @@ export default function HomePage() {
 
       {/* === SECTION BEST SELLERS === */}
       <section className="py-24 px-4 text-center">
-        <h2 className="text-[60px] font-bebas uppercase mb-16 text-white">
+        <h2 className="text-[60px] font-bebas uppercase mb-16 !text-white">
           BEST SELLERS
         </h2>
         <div className="flex flex-wrap justify-center gap-12">
