@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Helvetica:wght@300;400;700&display=swap');
 
@@ -5,49 +6,57 @@
 @tailwind components;
 @tailwind utilities;
 
+/* 🌄 FOND GLOBAL SUR TOUT LE SITE */
 body {
-    background-color: #fd6f2f;
+  margin: 0;
+  padding: 0;
+  background-image: url('/fond.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  font-family: 'Helvetica', sans-serif;
 }
 
+/* ✅ POLICES UTILISABLES EN CLASSES */
 .font-bebas {
-    font-family: 'Bebas Neue', sans-serif !important;
+  font-family: 'Bebas Neue', sans-serif !important;
 }
+
 .font-helvetica {
-    font-family: 'Helvetica', sans-serif !important;
+  font-family: 'Helvetica', sans-serif !important;
 }
 
-/* ... le reste de tes styles ... */
-
+/* === STYLES CUSTOM === */
 .subscribe,
 .subscribe * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-
-  
-/* Pour la classe fill : */
+/* Input customisé */
 .fill {
-    box-sizing: border-box;
-    background: #ffffff;
-    border-radius: 6.85px;
-    border: 1.71px solid #e7e8f2;
-    width: 283.1px; /* ici on utilise 100% width dans React mais fixe dans parent */
-    height: 57.08px;
-    position: relative;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    font-size: 16px;
-    line-height: 24px;
-    color: black;
+  box-sizing: border-box;
+  background: #ffffff;
+  border-radius: 6.85px;
+  border: 1.71px solid #e7e8f2;
+  width: 283.1px;
+  height: 57.08px;
+  position: relative;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 16px;
+  line-height: 24px;
+  color: black;
 }
 
-/* Label style pour le texte "Adresse mail" */
+/* Label flottant */
 .label {
-    position: absolute;
-    color: #ffebdd;
-    opacity: 0.6;
-    font-size: 16px;
-    font-family: Helvetica, sans-serif;
-    pointer-events: none;
-    user-select: none;
+  position: absolute;
+  color: #ffebdd;
+  opacity: 0.6;
+  font-size: 16px;
+  font-family: 'Helvetica', sans-serif;
+  pointer-events: none;
+  user-select: none;
 }
