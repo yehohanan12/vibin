@@ -6,26 +6,28 @@ const HEADER_HEIGHT = 90;
 
 export default function Layout({ children }) {
   return (
-    <div className="min-h-screen flex flex-col overflow-x-hidden w-full">
-      {/* === HEADER FULL WIDTH === */}
+    <div className="flex flex-col min-h-screen w-full overflow-x-hidden">
+      {/* === HEADER FIXE EN HAUT === */}
       <header
         className="fixed top-0 left-0 right-0 z-50 w-full"
         style={{
           height: HEADER_HEIGHT,
-          backgroundColor: "transparent", // fond transparent pour laisser voir l'image
-          borderBottom: "none", // ❌ supprime la ligne blanche
+          backgroundColor: "transparent",
         }}
       >
         <Header />
       </header>
 
-      {/* === MAIN CONTENT (avec marge haute pour ne pas être caché) === */}
-      <main style={{ marginTop: `${HEADER_HEIGHT}px` }} className="w-full">
+      {/* === MAIN === */}
+      <main
+        className="flex-1 w-full"
+        style={{ marginTop: `${HEADER_HEIGHT}px` }}
+      >
         {children}
       </main>
 
       {/* === FOOTER === */}
-      <footer className="w-full mt-auto bg-transparent">
+      <footer className="w-full bg-transparent">
         <Footer />
       </footer>
     </div>
