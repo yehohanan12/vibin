@@ -26,7 +26,7 @@ export default function Subscribe() {
       </div>
 
       {/* Description */}
-      <p className="mt-6 text-[17.7px] text-[#ffebdd] opacity-60 leading-[23.3px] font-helvetica max-w-xs">
+      <p className="mt-6 text-[17px] text-[#ffebdd] opacity-60 leading-[23.3px] font-helvetica max-w-xs">
         Les conseils, des actus et des vibrations en avant-première.
         <br />
         Rejoins la communauté qui célèbre le plaisir sans tabou.
