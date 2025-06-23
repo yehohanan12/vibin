@@ -6,52 +6,35 @@ import icon3 from "../assets/Group 2.svg";
 import icon4 from "../assets/Group 12.svg";
 
 export default function Header() {
-    return (
-        <header
-            className="relative w-full flex-shrink-0 bg-[#fd6f2f]"
-            style={{ height: 90 }}
-        >
-            {/* fond rectangle orange */}
-            <div className="absolute inset-0 bg-[#fd6f2f]" />
+  return (
+    <header
+      className="w-full flex items-center justify-between px-12 py-4 text-white"
+      style={{
+        backgroundImage: "url('/fond.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      {/* === Logo à gauche === */}
+      <div className="flex-shrink-0">
+        <img src={logo} alt="Vibin logo" className="h-[70px] w-auto" />
+      </div>
 
-            {/* Logo */}
-            <img
-                src={logo}
-                alt="Vibin logo"
-                className="absolute left-12 top-[7px] h-[76px] w-auto z-10"
-            />
+      {/* === Menu centré avec ESPACEMENT VISUEL === */}
+      <nav className="flex gap-12 font-bebas text-lg uppercase tracking-widest text-white">
+        <a href="#" className="hover:text-orange-300 transition">Accueil</a>
+        <a href="#" className="hover:text-orange-300 transition">Sextoys</a>
+        <a href="#" className="hover:text-orange-300 transition">Blog</a>
+        <a href="#" className="hover:text-orange-300 transition">À propos</a>
+        <a href="#" className="hover:text-orange-300 transition">Contact</a>
+      </nav>
 
-            {/* Navigation centrée */}
-            <div
-                className="absolute left-1/2 flex flex-row gap-[40px] items-center justify-start text-white"
-                style={{
-                    width: 508,
-                    top: "34.44%",
-                    transform: "translateX(-50%)",
-                }}
-            >
-                {["Accueil", "Sextoys", "Blog", "à propos", "Contact"].map(
-                    (item) => (
-                        <a
-                            href="#"
-                            key={item}
-                            className="font-[BebasNeue-Regular] text-sm font-normal tracking-wider relative"
-                        >
-                            {item}
-                        </a>
-                    )
-                )}
-            </div>
-
-            {/* Icônes */}
-            <div
-                className="absolute flex flex-row gap-[48.2px] items-end"
-                style={{ left: 1122, top: 31 }}
-            >
-                {[icon1, icon2, icon3, icon4].map((src, i) => (
-                    <img key={i} src={src} alt="" className="h-[20px] w-auto" />
-                ))}
-            </div>
-        </header>
-    );
+      {/* === Icônes à droite === */}
+      <div className="flex gap-4 flex-shrink-0">
+        {[icon1, icon2, icon3, icon4].map((src, index) => (
+          <img key={index} src={src} alt={`icon-${index}`} className="h-[20px] w-auto" />
+        ))}
+      </div>
+    </header>
+  );
 }
